@@ -1,0 +1,99 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #354626;
+  color: #333;
+}
+
+header {
+  background-color: #013d01;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+header .header-right {
+  display: flex;
+}
+header .header-right .account,
+header .header-right .about {
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.main-content {
+  display: flex;
+  padding: 20px;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #637512;
+  padding: 20px;
+}
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar nav ul li {
+  margin-bottom: 10px;
+}
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.content {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 400px;
+  background-image: url("eksootiline-loom.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  background-color: #637512;
+}
+.hero-image h1 {
+  font-size: 2.5em;
+}
+
+.sections {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.sections .section {
+  width: 30%;
+  background-color: #637512;
+  /* Tumedam roheline taust */
+  color: rgb(255, 255, 255);
+  /* Valge tekst */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.sections .section img {
+  width: 100%;
+}
+
+footer {
+  background-color: #637512;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+}/*# sourceMappingURL=styles.css.map */
