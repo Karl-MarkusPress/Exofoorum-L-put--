@@ -14,13 +14,16 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+
 header .logo {
   font-size: 1.5em;
   font-weight: bold;
 }
+
 header .header-right {
   display: flex;
 }
+
 header .header-right .account,
 header .header-right .about {
   cursor: pointer;
@@ -37,13 +40,16 @@ header .header-right .about {
   background-color: #637512;
   padding: 20px;
 }
+
 .sidebar nav ul {
   list-style: none;
   padding: 0;
 }
+
 .sidebar nav ul li {
   margin-bottom: 10px;
 }
+
 .sidebar nav ul li a {
   text-decoration: none;
   color: #ffffff;
@@ -67,6 +73,7 @@ header .header-right .about {
   text-align: center;
   background-color: #637512;
 }
+
 .hero-image h1 {
   font-size: 2.5em;
 }
@@ -76,6 +83,7 @@ header .header-right .about {
   justify-content: space-around;
   margin-top: 20px;
 }
+
 .sections .section {
   width: 30%;
   background-color: #637512;
@@ -86,6 +94,7 @@ header .header-right .about {
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .sections .section img {
   width: 100%;
 }
@@ -96,4 +105,6 @@ footer {
   text-align: center;
   padding: 10px 0;
   margin-top: 20px;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registreeru</title>
+    </head>
+    <body>
+
+        <h1>Registreeru</h1>
+
+        <form action="/register" method="post">
+            <div>
+                <label for="username">Kasutajanimi:</label><br>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <br>
+            <div>
+                <label for="password">Parool:</label><br>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <br>
+            <div>
+                <label for="password-confirm">Kinnita parool:</label><br>
+                <input type="password" id="password-confirm"
+                    name="password-confirm" required>
+            </div>
+            <br>
+            <button type="submit">Registreeru</button>
+        </form>
+
+        <p>Kas sul on juba konto? <a href="/login">Logi sisse</a></p>
+
+    </body>
+</html>

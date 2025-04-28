@@ -30,7 +30,20 @@ PASSWORD:postgres
 Mõelda välja äriline osa, tasuline
 või mõelda välja praktiline informatsioon
 
+"It sõnade leksikon"
+https://akit.cyber.ee/
 
 KIRJALIK OSA:
 
 SISSEJUHATUS- tutvustada
+
+info lehe routing. 
+@route('/)
+
+pip install psycopg2
+pip install beaker
+pip install bottle
+
+
+
+https://docs.python.org/3/library/hashlib.html crypt

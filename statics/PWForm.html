@@ -1,0 +1,23 @@
+<!--Passwordi muutmis form, suunata tagasi avalehele peale edukat muutmist, Muutmise vea puhul redirectib uuesti passi muutmis formile, ning annab vastava vea teate-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Muuda Parooli</title>
+    <link rel="stylesheet" href="/statics/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Muuda Parooli</h1>
+        <form id="passwordForm" action="/change_password" method="post">
+            <label for="oldPassword">Vana Parool:</label><br>
+            <input type="password" id="oldPassword" name="oldPassword" required><br><br>
+            <label for="newPassword">Uus Parool:</label><br>
+            <input type="password" id="newPassword" name="newPassword" required><br><br>
+            <label for="confirmPassword">Uus Parool Uuesti:</label><br>
+            <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
+            <button type="submit">Muuda Parooli</button>
+        </form>
+        <p><a href="/Homepage">Tagasi Avalehele</a></p>
+    </div>
+</body>
+</html>
