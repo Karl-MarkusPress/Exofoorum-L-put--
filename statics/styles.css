@@ -1,110 +1,398 @@
 body {
   font-family: sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: #354626;
+  background-color: #E0EEE0;
   color: #333;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  color: #556B2F;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #556B2F;
+  text-decoration: none;
+}
+a:hover {
+  color: #2b3618;
+  text-decoration: underline;
+}
+
+button[type=submit] {
+  background-color: #8FBC8F;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+button[type=submit]:hover {
+  background-color: #6fa96f;
+}
+
+input[type=text],
+input[type=password],
+input[type=file],
+textarea {
+  width: calc(100% - 1rem);
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #B8860B;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=file]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #8FBC8F;
+  box-shadow: 0 0 0 0.2rem rgba(143, 188, 143, 0.25);
+}
+
+textarea {
+  resize: vertical;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #556B2F;
+}
+
+.container {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border: 1px solid #f3bc36;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 header {
-  background-color: #013d01;
-  color: white;
-  padding: 10px 20px;
+  background-color: white;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #B8860B;
 }
-
 header .logo {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: bold;
+  color: #556B2F;
 }
-
-header .header-right {
-  display: flex;
-}
-
-header .header-right .account,
-header .header-right .about {
-  cursor: pointer;
-  margin-left: 20px;
+header .header-right a {
+  margin-left: 1rem;
 }
 
 .main-content {
   display: flex;
-  padding: 20px;
+  padding: 1rem;
 }
 
 .sidebar {
-  width: 200px;
-  background-color: #637512;
-  padding: 20px;
+  flex: 0 0 200px;
+  margin-right: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid #f3bc36;
+  border-radius: 0.25rem;
 }
-
 .sidebar nav ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
-
 .sidebar nav ul li {
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
+}
+.sidebar nav ul li a {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease;
+  position: relative;
+  /* For expandable sidebar */
 }
 
-.sidebar nav ul li a {
-  text-decoration: none;
-  color: #ffffff;
+.sidebar .expandable > a {
+  padding-right: 25px;
+  /* Space for arrow */
+}
+
+.sidebar .expandable > a::after {
+  content: "+";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+  color: #556B2F;
+  transition: transform 0.3s ease;
+}
+
+.sidebar .expandable.open > a::after {
+  content: "-";
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.sidebar .subcategories {
+  display: none;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  border-left: 2px solid #e8a90e;
+}
+
+.sidebar .expandable.open .subcategories {
+  display: block;
+}
+
+.sidebar .subcategories li a {
+  background-color: #f0f7f0;
+}
+.sidebar .subcategories li a:hover {
+  background-color: white;
 }
 
 .content {
-  flex-grow: 1;
-  margin-left: 20px;
+  flex: 1;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #f3bc36;
+  border-radius: 0.25rem;
 }
-
-.hero-image {
-  width: 100%;
-  height: 400px;
-  background-image: url("eksootiline-loom.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+.content .hero-image {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
   text-align: center;
-  background-color: #637512;
-}
-
-.hero-image h1 {
-  font-size: 2.5em;
-}
-
-.sections {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-}
-
-.sections .section {
-  width: 30%;
-  background-color: #637512;
-  /* Tumedam roheline taust */
-  color: rgb(255, 255, 255);
-  /* Valge tekst */
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.sections .section img {
-  width: 100%;
 }
 
 footer {
-  background-color: #637512;
-  color: rgb(255, 255, 255);
   text-align: center;
-  padding: 10px 0;
-  margin-top: 20px;
+  padding: 1rem;
+  background-color: white;
+  border-top: 1px solid #B8860B;
+  color: #333;
+  font-size: 0.9rem;
 }
 
-/*# sourceMappingURL=styles.css.map */
+#new-post {
+  padding: 1rem;
+  margin-bottom: 2rem;
+  background-color: #f0f7f0;
+  border: 1px solid #f3bc36;
+  border-radius: 0.25rem;
+}
+#new-post h2 {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+#new-post form {
+  display: flex;
+  flex-direction: column;
+}
+
+#existing-posts {
+  padding: 1rem;
+  background-color: #f0f7f0;
+  border: 1px solid #f3bc36;
+  border-radius: 0.25rem;
+}
+#existing-posts h2 {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+#passwordForm {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border: 1px solid #f3bc36;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+form[action="/register"] {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border: 1px solid #f3bc36;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+form[action="/register"] div {
+  margin-bottom: 1rem;
+}
+form[action="/register"] p {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.container {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border: 1px solid #e8a90e;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.75rem 1.25rem rgba(0, 0, 0, 0.08);
+}
+
+.account-info {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid #f2b41e;
+}
+.account-info h2 {
+  color: #556B2F;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.account-info p {
+  margin-bottom: 0;
+}
+.account-info p strong {
+  font-weight: bold;
+  color: black;
+}
+
+.account-actions {
+  margin-bottom: 2rem;
+}
+.account-actions h2 {
+  color: #556B2F;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.account-actions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.account-actions ul li {
+  margin-bottom: 0.75rem;
+}
+.account-actions ul li a {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  background-color: white;
+  color: #333;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border: 1px solid transparent;
+}
+.account-actions ul li a:hover {
+  background-color: #eff5ef;
+  border-color: #e8a90e;
+}
+
+body > .container + p a {
+  text-align: center;
+  margin-top: 2rem;
+  color: #556B2F;
+  text-decoration: underline;
+}
+body > .container + p a:hover {
+  color: #2b3618;
+}
+
+.container {
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border: 1px solid #e8a90e;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form div {
+  margin-bottom: 1rem;
+}
+
+body > .container + p {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+body > .container + p a {
+  color: #556B2F;
+  text-decoration: underline;
+}
+body > .container + p a:hover {
+  color: #2b3618;
+}
+
+.logo-about {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #556B2F;
+  z-index: 10;
+}
+
+.container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border: 1px solid #f2b41e;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.container h1 {
+  color: #556B2F;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.container p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.container p a {
+  color: #556B2F;
+  text-decoration: underline;
+}
+.container p a:hover {
+  color: #2b3618;
+}
+.container p:last-child {
+  margin-bottom: 0;
+}
+
+body > p {
+  text-align: center;
+  margin-top: 2rem;
+}/*# sourceMappingURL=styles.css.map */

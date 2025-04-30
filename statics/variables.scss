@@ -1,0 +1,12 @@
+// _variables.scss
+$primary-green: #8FBC8F; // Medium aquamarine
+$secondary-green: #A9A9A9; // Dark gray (for contrast)
+$light-green: #E0EEE0; // Light cyan
+$dark-green: #556B2F; // Dark olive green
+$text-color: #333;
+$link-color: $dark-green;
+$link-hover-color: darken($link-color, 15%);
+$background-color: $light-green;
+$border-color: #B8860B; // Dark goldenrod (earthy accent)
+$spacing-unit: 1rem;
+$font-family: sans-serif;

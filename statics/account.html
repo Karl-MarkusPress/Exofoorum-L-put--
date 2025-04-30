@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="et">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Konto</title>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Konto Seaded</h1>
+
+            <div class="account-info">
+                <h2>Kasutaja Info</h2>
+                <p><strong>Kasutajanimi:</strong>
+                    {{session.get("username")}}</p>
+            </div>
+
+            <div class="account-actions">
+                <h2>Tegevused</h2>
+                <ul>
+                    % if session.get('username'):
+                    <li><a href="/logout">Logi Välja</a></li>
+                    <li><a href="/PWForm">Muuda Parooli</a></li>
+                    % else:
+                    <li><a href="/register">Registreeri Konto</a></li>
+                    <li><a href="/login">Logi Sisse</a></li>
+                    % end
+                </ul>
+            </div>
+
+            <p><a href="/">Tagasi Avalehele</a></p>
+        </div>
+    </body>
+</html>

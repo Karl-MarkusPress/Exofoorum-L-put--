@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="et">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sisselogimine</title>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Sisselogimine</h1>
+            <form action="/loginpost" method="post">
+                <div>
+                    <label for="username">Kasutajanimi:</label><br>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <br>
+                <div>
+                    <label for="password">Parool:</label><br>
+                    <input type="password" id="password" name="password"
+                        required>
+                </div>
+                <br>
+                <button type="submit">Logi Sisse</button>
+            </form>
+            <p>Kas sul pole kontot? <a href="/register">Registreeru siin</a></p>
+            <p><a href="/">Tagasi avalehele</a></p>
+        </div>
+    </body>
+</html>
