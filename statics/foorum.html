@@ -8,12 +8,23 @@
     </head>
     <body>
         <header>
-            <h1>Foorum</h1>
+            <div class="logo">ExoFoorum</div>
+            <div class="header-right">
+                <a href="/">Tagasi avalehele</a>
+                <a href="/account">Konto</a>
+                <a href="/about">Meist</a>
+            </div>
+
         </header>
 
+        % if session.get('username'):
         <div id="new-post">
             <h2>Uus postitus</h2>
-            <form>
+            <form action="/foorumpost" method="post"
+                enctype="multipart/form-data">
+
+                <label for="post-title">Tiitel:</label>
+                <input type="text" id="post-title" name="post-title">
                 <label for="post-text">Postituse tekst:</label><br>
                 <textarea id="post-text" name="post-text" rows="4"
                     cols="50"></textarea><br><br>
@@ -25,10 +36,66 @@
                 <input type="submit" value="Postita">
             </form>
         </div>
+        % end
 
         <div id="existing-posts">
             <h2>Olemasolevad postitused</h2>
-            <p>Siin kuvatakse kasutajate poolt postitatud postitused.</p>
+            % if posts:
+            % for post in posts:
+            <div class="post-container">
+                <!-- Added this div with class "post-container" -->
+                <div class="post">
+                    <p><strong>Kasutaja:</strong>{{post[6]}}</p>
+                    <p><strong>Pealkiri:</strong>{{ post[2] }}</p>
+                    <p class="post-info"><strong>Sisu:</strong>{{ post[3] }}</p>
+                    % if post [4]:
+                    <img src="/image?imageID={{post[5]}}">
+                    %end
+                </div>
+
+                % if session.get('username'):
+                <div class="new-comment-form">
+                    <h4>Lisa kommentaar</h4>
+                    <form action="/kommenteeri/{{ post[0] }}" method="post"
+                        enctype="multipart/form-data">
+                        <label
+                            for="comment-text-{{ post[0] }}">Kommentaar:</label>
+                        <textarea id="comment-text-{{ post[0] }}"
+                            name="comment-text" rows="2"
+                            cols="50"></textarea><br>
+                        <label for="photo{{post[0] }}">Lisa
+                            foto:</label><br>
+                        <input type="file" id="photo{{post[0] }}"
+                            name="photo"
+                            accept="image/*"><br><br>
+                        <input type="submit" value="Lisa kommentaar">
+                    </form>
+                </div>
+                % else:
+                <p><a href="/login">Logi sisse</a>, et kommenteerida.</p>
+                % end
+
+                <div class="comments-section">
+                    <h3>Kommentaarid</h3>
+                    % if Comments.get(post[0]):
+                    % for comment in Comments[post[0]]:
+                    <div class="comment">
+                        <p><strong>Kasutaja:</strong>{{comment[6]}}</p>
+                        <p>{{ comment[2] }}</p>
+                        % if comment [4]:
+                        <img src="/image?imageID={{comment[5]}}">
+                        %end
+                    </div>
+                    % end
+                    % else:
+                    <p>Sellel postitusel pole veel kommentaare.</p>
+                    % end
+                </div>
+            </div> <!-- Closing the "post-container" div -->
+            % end
+            % else:
+            <p>Ühtegi postitust pole veel lisatud.</p>
+            % end
         </div>
 
     </body>

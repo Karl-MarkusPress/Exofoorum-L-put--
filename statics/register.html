@@ -6,11 +6,17 @@
         <title>Registreeru</title>
         <link rel="stylesheet" href="/styles.css">
     </head>
+    <header>
+        <div class="logo">ExoFoorum</div>
+        <div class="header-right">
+            <a href="/">Tagasi avalehele</a>
+        </div>
+    </header>
     <body>
 
         <h1>Registreeru</h1>
 
-        <form action="/register" method="post">
+        <form action="/registerpost" method="post">
             <div>
                 <label for="username">Kasutajanimi:</label><br>
                 <input type="text" id="username" name="username" required>
@@ -29,7 +35,5 @@
             <br>
             <button type="submit">Registreeru</button>
         </form>
-        <p><a href="/login">Logi Sisse</a></p>
-
     </body>
 </html>

@@ -18,27 +18,61 @@
 
         <div class="main-content">
             <aside class="sidebar">
-                <nav>
-                    <ul>
-                        <li><a href="#">Maod</a></li>
-                        <li> &nbsp; <a href="/kuningpuuton">Kuning
-                                püüton</a></li>
-                        <li><a href="#">Sisalikud</a></li>
-                        <li><a href="#">Ämblikud</a></li>
-                        <li><a href="#">Papagoid</a></li>
+              <nav>
+                <ul>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Maod</a>
+                    <ul class="dropdown-menu" style="display: none;">
+                      <li><a href="/kuningpuuton">Kuningpüüton</a></li>
                     </ul>
-                </nav>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Sisalikud</a>
+                    <ul class="dropdown-menu" style="display: none;">
+                      <li><a href="/habeagaam">Habe agaam</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Ämblikud</a>
+                    <ul class="dropdown-menu" style="display: none;">
+                      <li><a href="/linnutapik">Tarantel</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Papagoid</a>
+                    <ul class="dropdown-menu" style="display: none;">
+                      <li><a href="/kakaduu">Kakaduu</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
             </aside>
-
-            <div class="content">
-                <div class="hero-image">
-                    <h1>Tere tulemast ExoFoorumisse!</h1>
-                </div>
+          </div>
+           <div class="content">
+             <div class="hero-image">
+                <h1>Tere tulemast ExoFoorumisse!</h1>
+              </div>
             </div>
-        </div>
+          </div>
 
-        <footer>
+          <footer>
             <p>2025 ExoFoorum</p>
-        </footer>
-    </body>
-</html>
+          </footer>
+
+          <script>
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+                  
+              dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', (event) => {
+                  event.preventDefault();
+                  const dropdownMenu = toggle.nextElementSibling;
+                  if (dropdownMenu.style.display === 'none') {
+                     dropdownMenu.style.display = 'block';
+                  } else {
+                    dropdownMenu.style.display = 'none';
+                    }
+                  });
+                });
+            </script>
+        </body>
+  </html>

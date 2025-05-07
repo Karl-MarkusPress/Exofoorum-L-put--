@@ -1,18 +1,15 @@
-// _variables.scss
-$primary-green: #8FBC8F; // Medium aquamarine
-$secondary-green: #A9A9A9; // Dark gray (for contrast)
-$light-green: #E0EEE0; // Light cyan
-$dark-green: #556B2F; // Dark olive green
+// variables.scss
+$primary-green: #8FBC8F;
+$secondary-green: #A9A9A9;
+$light-green: #E0EEE0;
+$dark-green: #556B2F;
 $text-color: #333;
 $link-color: $dark-green;
 $link-hover-color: darken($link-color, 15%);
 $background-color: $light-green;
-$border-color: #B8860B; // Dark goldenrod (earthy accent)
+$border-color: #556B2F;
 $spacing-unit: 1rem;
 $font-family: sans-serif;
-
-// styles.scss
-@import 'variables';
 
 body {
     font-family: $font-family;
@@ -143,14 +140,14 @@ header {
             border-radius: 0.25 * $spacing-unit;
             transition: background-color 0.3s ease;
             position: relative;
-            /* For expandable sidebar */
+
         }
     }
 }
 
 .sidebar .expandable>a {
     padding-right: 25px;
-    /* Space for arrow */
+
 }
 
 .sidebar .expandable>a::after {
@@ -211,9 +208,16 @@ footer {
     border-top: 1px solid $border-color;
     color: $text-color;
     font-size: 0.9rem;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-// Specific styles for foorum.html
+// foorum.html
 #new-post {
     padding: $spacing-unit;
     margin-bottom: 2 * $spacing-unit;
@@ -244,7 +248,29 @@ footer {
     }
 }
 
-// Specific styles for PWForm.html
+.post-container {
+    border: 2px solid #556B2F;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+
+#existing-posts>.post-container:first-child {
+    border-top: 1px solid #ccc;
+}
+
+.comment {
+    border: 2px solid #556B2F;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+
+#existing-comments>.comments-container:first-child {
+    border-top: 1px solid #ccc;
+}
+
+// PWForm.html
 #passwordForm {
     max-width: 400px;
     margin: 2 * $spacing-unit auto;
@@ -255,7 +281,7 @@ footer {
     box-shadow: 0 0.5 * $spacing-unit 1 * $spacing-unit rgba(0, 0, 0, 0.1);
 }
 
-// Specific styles for register.html
+// register.html
 form[action="/register"] {
     max-width: 400px;
     margin: 2 * $spacing-unit auto;
@@ -275,7 +301,7 @@ form[action="/register"] {
     }
 }
 
-// Specific styles for account.html
+// account.html
 .container {
     // Overriding the general container for account page
     max-width: 600px;
@@ -362,7 +388,7 @@ body>.container+p a {
     }
 }
 
-// Specific styles for login.html
+//login.html
 .container {
     // Overriding the general container for login page
     max-width: 400px;
@@ -398,7 +424,7 @@ body>.container+p {
     }
 }
 
-// Specific styles for about.html
+// about.html
 .logo-about {
     position: absolute;
     top: 1 * $spacing-unit;
@@ -445,8 +471,112 @@ body>.container+p {
     }
 }
 
-body>p {
-    // Style for the "Tagasi avalehele" link on about page
-    text-align: center;
-    margin-top: 2 * $spacing-unit;
+.python-guide {
+    padding: 2 * $spacing-unit;
+    background-color: lighten($light-green, 8%);
+    border-radius: 0.5 * $spacing-unit;
+
+    .section {
+        background-color: #fff;
+        border: 1px solid lighten($border-color, 15%);
+        padding: 1.5 * $spacing-unit;
+        border-radius: 0.5 * $spacing-unit;
+        margin-bottom: 2 * $spacing-unit;
+        box-shadow: 0 0.5 * $spacing-unit 1 * $spacing-unit rgba(0, 0, 0, 0.05);
+
+        h2.section-title {
+            color: $dark-green;
+            border-bottom: 2px solid lighten($border-color, 20%);
+            padding-bottom: 0.5 * $spacing-unit;
+            margin-bottom: $spacing-unit;
+            font-size: 1.4rem;
+        }
+
+        p {
+            margin-bottom: 1 * $spacing-unit;
+            color: darken($text-color, 5%);
+        }
+
+        ul {
+            margin-left: 1.5 * $spacing-unit;
+            margin-bottom: 1 * $spacing-unit;
+
+            li {
+                margin-bottom: 0.5 * $spacing-unit;
+
+                ul {
+                    margin-top: 0.5 * $spacing-unit;
+
+                    li {
+                        list-style: circle;
+                        margin-left: 1.25 * $spacing-unit;
+                    }
+                }
+            }
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 1.5 * $spacing-unit;
+
+            img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 0.5 * $spacing-unit;
+                box-shadow: 0 0.25 * $spacing-unit 0.75 * $spacing-unit rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+}
+
+.python-guide {
+    padding: 2 * $spacing-unit;
+    background-color: lighten($light-green, 8%);
+    border-radius: 0.5 * $spacing-unit;
+
+    .section {
+        background-color: #fff;
+        border: 1px solid lighten($border-color, 15%);
+        padding: 1.5 * $spacing-unit;
+        border-radius: 0.5 * $spacing-unit;
+        margin-bottom: 2 * $spacing-unit;
+        box-shadow: 0 0.5 * $spacing-unit 1 * $spacing-unit rgba(0, 0, 0, 0.05);
+
+        h2.section-title {
+            color: $dark-green;
+            border-bottom: 2px solid lighten($border-color, 20%);
+            padding-bottom: 0.5 * $spacing-unit;
+            margin-bottom: $spacing-unit;
+            font-size: 1.4rem;
+        }
+
+        p {
+            margin-bottom: 1 * $spacing-unit;
+            color: darken($text-color, 5%);
+        }
+
+        ul {
+            margin-left: 1.5 * $spacing-unit;
+            margin-bottom: 1 * $spacing-unit;
+
+            li {
+                margin-bottom: 0.5 * $spacing-unit;
+
+                ul {
+                    margin-top: 0.5 * $spacing-unit;
+
+                    li {
+                        list-style: circle;
+                        margin-left: 1.25 * $spacing-unit;
+                    }
+                }
+            }
+        }
+    }
+
+    body>p {
+        // "Tagasi avalehele"
+        text-align: center;
+        margin-top: 2 * $spacing-unit;
+    }
 }

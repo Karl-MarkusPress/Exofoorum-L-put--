@@ -45,7 +45,7 @@ textarea {
   width: calc(100% - 1rem);
   padding: 0.75rem;
   margin-bottom: 1rem;
-  border: 1px solid #B8860B;
+  border: 1px solid #556B2F;
   border-radius: 0.25rem;
   box-sizing: border-box;
   font-family: sans-serif;
@@ -75,7 +75,7 @@ label {
   margin: 2rem auto;
   padding: 2rem;
   background-color: #fff;
-  border: 1px solid #f3bc36;
+  border: 1px solid #8db14f;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
@@ -86,7 +86,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #B8860B;
+  border-bottom: 1px solid #556B2F;
 }
 header .logo {
   font-size: 1.5rem;
@@ -107,7 +107,7 @@ header .header-right a {
   margin-right: 1rem;
   padding: 1rem;
   background-color: white;
-  border: 1px solid #f3bc36;
+  border: 1px solid #8db14f;
   border-radius: 0.25rem;
 }
 .sidebar nav ul {
@@ -124,12 +124,10 @@ header .header-right a {
   border-radius: 0.25rem;
   transition: background-color 0.3s ease;
   position: relative;
-  /* For expandable sidebar */
 }
 
 .sidebar .expandable > a {
   padding-right: 25px;
-  /* Space for arrow */
 }
 
 .sidebar .expandable > a::after {
@@ -152,7 +150,7 @@ header .header-right a {
   display: none;
   padding-left: 1.5rem;
   margin-top: 0.5rem;
-  border-left: 2px solid #e8a90e;
+  border-left: 2px solid #718e3f;
 }
 
 .sidebar .expandable.open .subcategories {
@@ -170,7 +168,7 @@ header .header-right a {
   flex: 1;
   padding: 1rem;
   background-color: #fff;
-  border: 1px solid #f3bc36;
+  border: 1px solid #8db14f;
   border-radius: 0.25rem;
 }
 .content .hero-image {
@@ -185,16 +183,23 @@ footer {
   text-align: center;
   padding: 1rem;
   background-color: white;
-  border-top: 1px solid #B8860B;
+  border-top: 1px solid #556B2F;
   color: #333;
   font-size: 0.9rem;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #new-post {
   padding: 1rem;
   margin-bottom: 2rem;
   background-color: #f0f7f0;
-  border: 1px solid #f3bc36;
+  border: 1px solid #8db14f;
   border-radius: 0.25rem;
 }
 #new-post h2 {
@@ -209,7 +214,7 @@ footer {
 #existing-posts {
   padding: 1rem;
   background-color: #f0f7f0;
-  border: 1px solid #f3bc36;
+  border: 1px solid #8db14f;
   border-radius: 0.25rem;
 }
 #existing-posts h2 {
@@ -217,12 +222,32 @@ footer {
   margin-bottom: 0.5rem;
 }
 
+.post-container {
+  border: 2px solid #556B2F;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+#existing-posts > .post-container:first-child {
+  border-top: 1px solid #ccc;
+}
+
+.comment {
+  border: 2px solid #556B2F;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+#existing-comments > .comments-container:first-child {
+  border-top: 1px solid #ccc;
+}
+
 #passwordForm {
   max-width: 400px;
   margin: 2rem auto;
   padding: 2rem;
   background-color: #fff;
-  border: 1px solid #f3bc36;
+  border: 1px solid #8db14f;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
@@ -232,7 +257,7 @@ form[action="/register"] {
   margin: 2rem auto;
   padding: 2rem;
   background-color: #fff;
-  border: 1px solid #f3bc36;
+  border: 1px solid #8db14f;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
@@ -249,7 +274,7 @@ form[action="/register"] p {
   margin: 3rem auto;
   padding: 2rem;
   background-color: #fff;
-  border: 1px solid #e8a90e;
+  border: 1px solid #718e3f;
   border-radius: 0.75rem;
   box-shadow: 0 0.75rem 1.25rem rgba(0, 0, 0, 0.08);
 }
@@ -259,7 +284,7 @@ form[action="/register"] p {
   padding: 1.5rem;
   border-radius: 0.5rem;
   margin-bottom: 2rem;
-  border: 1px solid #f2b41e;
+  border: 1px solid #7fa046;
 }
 .account-info h2 {
   color: #556B2F;
@@ -306,7 +331,7 @@ form[action="/register"] p {
 }
 .account-actions ul li a:hover {
   background-color: #eff5ef;
-  border-color: #e8a90e;
+  border-color: #718e3f;
 }
 
 body > .container + p a {
@@ -324,7 +349,7 @@ body > .container + p a:hover {
   margin: 3rem auto;
   padding: 2rem;
   background-color: #fff;
-  border: 1px solid #e8a90e;
+  border: 1px solid #718e3f;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
 }
@@ -365,7 +390,7 @@ body > .container + p a:hover {
   margin: 3rem auto;
   padding: 2rem;
   background-color: #fff;
-  border: 1px solid #f2b41e;
+  border: 1px solid #7fa046;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
   position: relative;
@@ -392,7 +417,94 @@ body > .container + p a:hover {
   margin-bottom: 0;
 }
 
-body > p {
+.python-guide {
+  padding: 2rem;
+  background-color: #fafcfa;
+  border-radius: 0.5rem;
+}
+.python-guide .section {
+  background-color: #fff;
+  border: 1px solid #7fa046;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+}
+.python-guide .section h2.section-title {
+  color: #556B2F;
+  border-bottom: 2px solid #8db14f;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+.python-guide .section p {
+  margin-bottom: 1rem;
+  color: #262626;
+}
+.python-guide .section ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.python-guide .section ul li {
+  margin-bottom: 0.5rem;
+}
+.python-guide .section ul li ul {
+  margin-top: 0.5rem;
+}
+.python-guide .section ul li ul li {
+  list-style: circle;
+  margin-left: 1.25rem;
+}
+.python-guide .section .image-container {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.python-guide .section .image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+}
+
+.python-guide {
+  padding: 2rem;
+  background-color: #fafcfa;
+  border-radius: 0.5rem;
+}
+.python-guide .section {
+  background-color: #fff;
+  border: 1px solid #7fa046;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+}
+.python-guide .section h2.section-title {
+  color: #556B2F;
+  border-bottom: 2px solid #8db14f;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+.python-guide .section p {
+  margin-bottom: 1rem;
+  color: #262626;
+}
+.python-guide .section ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.python-guide .section ul li {
+  margin-bottom: 0.5rem;
+}
+.python-guide .section ul li ul {
+  margin-top: 0.5rem;
+}
+.python-guide .section ul li ul li {
+  list-style: circle;
+  margin-left: 1.25rem;
+}
+.python-guide body > p {
   text-align: center;
   margin-top: 2rem;
 }/*# sourceMappingURL=styles.css.map */

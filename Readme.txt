@@ -44,6 +44,15 @@ pip install psycopg2
 pip install beaker
 pip install bottle
 
+Foorumi postitustele lisada comment section
+Care guide lehel teha adminile uue lehe loomise võimalus. 
+Eraldi lehe osale firma toodete reklaamindus(Saan selle üles ehitada postitus funktsioonide juurde)
+Tava kasutaja
+Admin kasutaja
+Reklaam Kasutaja
+
+
+9.ndaks peab olema valmis postitus funktsioon, regamine,comments ja  pw change. + 25 lk teooriat + praktilise too kirjeldus
 
 
 https://docs.python.org/3/library/hashlib.html crypt
