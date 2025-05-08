@@ -145,54 +145,69 @@ header {
     }
 }
 
-.sidebar .expandable>a {
-    padding-right: 25px;
-
-}
-
-.sidebar .expandable>a::after {
-    content: "+";
+.sidebar {
     position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2em;
-    color: $dark-green;
-    transition: transform 0.3s ease;
-}
+    width: 150px;
+    /* Adjust as needed for a longer default sidebar */
+    top: 110px;
+    /* Adjust to control the space between the header and sidebar */
+    bottom: 100px;
 
-.sidebar .expandable.open>a::after {
-    content: "-";
-    transform: translateY(-50%) rotate(90deg);
-}
+    /* Make the sidebar extend to the bottom, adjust if needed */
+    /* Keep the rest of your sidebar styles */
+    .expandable>a {
+        padding-right: 25px;
+    }
 
-.sidebar .subcategories {
-    display: none;
-    padding-left: 1.5 * $spacing-unit;
-    margin-top: 0.5 * $spacing-unit;
-    border-left: 2px solid lighten($border-color, 10%);
-}
+    .expandable>a::after {
+        content: "+";
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.2em;
+        color: $dark-green;
+        transition: transform 0.3s ease;
+    }
 
-.sidebar .expandable.open .subcategories {
-    display: block;
-}
+    .expandable.open>a::after {
+        content: "-";
+        transform: translateY(-50%) rotate(90deg);
+    }
 
-.sidebar .subcategories li a {
-    background-color: lighten($light-green, 5%);
+    .subcategories {
+        display: none;
+        margin-left: 5px;
+        padding-left: 2.5 * $spacing-unit;
+        margin-top: 0.5 * $spacing-unit;
+        border-left: 2px solid lighten($border-color, 10%);
+    }
 
-    &:hover {
-        background-color: lighten($primary-green, 60%);
+    .expandable.open .subcategories {
+        display: block;
+    }
+
+    .subcategories li a {
+        background-color: lighten($light-green, 5%);
+
+        &:hover {
+            background-color: lighten($primary-green, 60%);
+        }
     }
 }
 
 .content {
     flex: 1;
+    margin-left: 220px;
+    margin-right: 20px;
     padding: $spacing-unit;
     background-color: #fff;
     border: 1px solid lighten($border-color, 20%);
     border-radius: 0.25 * $spacing-unit;
+    margin-top: 240px;
 
-    .hero-image {
+
+    .welcome-bar {
         background-color: lighten($primary-green, 60%);
         padding: 2 * $spacing-unit;
         border-radius: 0.25 * $spacing-unit;
@@ -282,7 +297,7 @@ footer {
 }
 
 // register.html
-form[action="/register"] {
+form[action="/registerpost"] {
     max-width: 400px;
     margin: 2 * $spacing-unit auto;
     padding: 2 * $spacing-unit;

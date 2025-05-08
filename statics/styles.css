@@ -126,10 +126,19 @@ header .header-right a {
   position: relative;
 }
 
+.sidebar {
+  position: absolute;
+  width: 150px;
+  /* Adjust as needed for a longer default sidebar */
+  top: 110px;
+  /* Adjust to control the space between the header and sidebar */
+  bottom: 100px;
+  /* Make the sidebar extend to the bottom, adjust if needed */
+  /* Keep the rest of your sidebar styles */
+}
 .sidebar .expandable > a {
   padding-right: 25px;
 }
-
 .sidebar .expandable > a::after {
   content: "+";
   position: absolute;
@@ -140,23 +149,20 @@ header .header-right a {
   color: #556B2F;
   transition: transform 0.3s ease;
 }
-
 .sidebar .expandable.open > a::after {
   content: "-";
   transform: translateY(-50%) rotate(90deg);
 }
-
 .sidebar .subcategories {
   display: none;
-  padding-left: 1.5rem;
+  margin-left: 5px;
+  padding-left: 2.5rem;
   margin-top: 0.5rem;
   border-left: 2px solid #718e3f;
 }
-
 .sidebar .expandable.open .subcategories {
   display: block;
 }
-
 .sidebar .subcategories li a {
   background-color: #f0f7f0;
 }
@@ -166,12 +172,15 @@ header .header-right a {
 
 .content {
   flex: 1;
+  margin-left: 220px;
+  margin-right: 20px;
   padding: 1rem;
   background-color: #fff;
   border: 1px solid #8db14f;
   border-radius: 0.25rem;
+  margin-top: 240px;
 }
-.content .hero-image {
+.content .welcome-bar {
   background-color: white;
   padding: 2rem;
   border-radius: 0.25rem;
@@ -252,7 +261,7 @@ footer {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
-form[action="/register"] {
+form[action="/registerpost"] {
   max-width: 400px;
   margin: 2rem auto;
   padding: 2rem;
@@ -261,10 +270,10 @@ form[action="/register"] {
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
-form[action="/register"] div {
+form[action="/registerpost"] div {
   margin-bottom: 1rem;
 }
-form[action="/register"] p {
+form[action="/registerpost"] p {
   text-align: center;
   margin-top: 1rem;
 }

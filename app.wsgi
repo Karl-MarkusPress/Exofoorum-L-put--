@@ -21,6 +21,10 @@ def style_css():
 def kuningpuuton_html():
     return static_file('kuningpuuton.html', root='./statics/')
 
+@route('/kakaduu')
+def kakadoo_html():
+    return static_file('kakadoo.html', root='./statics/')
+
 @route('/habeagaam')
 def habeagaam_html():
     return static_file('habeagaam.html', root='./statics/')
@@ -29,9 +33,6 @@ def habeagaam_html():
 def linnutapik_html():
     return static_file('linnutapik.html', root='./statics/')
 
-@route('/kuningboa')
-def kuningboa_html():
-    return static_file('kuningboa.html', root='./statics/')
 
 @route('/PWForm')
 def PWForm_html():
@@ -163,8 +164,8 @@ def register_html():
 def registerpost():
     
     username = request.params.get('username')
-    password = request.params.get('passsword')
-    passwordConfirm = request.params.get('passswordconfirm')
+    password = request.params.get('password')
+    password_confirm = request.params.get('password-confirm')
 
     conn = None
     try:
